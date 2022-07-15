@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useActions} from "../../hooks/useActions";
 import {useTypedSelector} from "../../hooks/useTypedSelector";
 import RepositoryItem from "./RepositoryItem";
-import {log} from "util";
 
 const Repositories = () => {
     const {fetchRepos} = useActions()
@@ -13,7 +12,6 @@ const Repositories = () => {
     const {repositories, error, loading} = useTypedSelector(state => state.repos)
     const [items, setItems] = useState(repositories);
 
-    console.log(items)
     const filterRepos = (event: React.ChangeEvent<HTMLInputElement>) => {
         let filtered = []
         for (let i in repositories) {
@@ -22,7 +20,6 @@ const Repositories = () => {
             }
         }
         setItems(filtered)
-        console.log(filtered)
     }
 
     useEffect(() => {
@@ -37,15 +34,17 @@ const Repositories = () => {
     }
 
     return (
-        <div>
+        <div className="RepoSearch">
             <input ref={inputRef} onInput={filterRepos}/>
-            {inputRef.current?.value != '' ?
-                items.map((repo, key) =>
-                    <RepositoryItem key={key} name={repo.name} forks={repo.forks} stars={repo.stargazers_count}
-                                    url={repo.html_url}/>
-                ) : repositories.map((repo, key) =>
-                    <RepositoryItem key={key} name={repo.name} forks={repo.forks} stars={repo.stargazers_count}
-                                    url={repo.html_url}/>)}
+            <div>
+                {inputRef.current?.value != '' ?
+                    items.map((repo, key) =>
+                        <RepositoryItem key={key} name={repo.name} forks={repo.forks} stars={repo.stargazers_count}
+                                        url={repo.html_url}/>
+                    ) : repositories.map((repo, key) =>
+                        <RepositoryItem key={key} name={repo.name} forks={repo.forks} stars={repo.stargazers_count}
+                                        url={repo.html_url}/>)}
+            </div>
         </div>
     );
 };

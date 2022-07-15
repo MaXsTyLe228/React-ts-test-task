@@ -5,3 +5,24 @@
   border-radius: 15px;
   justify-content: space-between;
 }
+
+.RepoSearch {
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  & > input {
+    margin: 20px;
+  }
+}
+
+.repositoryItem{
+  margin: 10px;
+  align-items: center;
+
+  .forks_stars{
+    display: flex;
+    flex-direction: column;
+  }
+}

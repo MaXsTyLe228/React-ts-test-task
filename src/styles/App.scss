@@ -3,5 +3,9 @@ a {
   color: black;
 }
 
+input {
+  font-size: 20px;
+}
+
 @import "./User";
 @import "./Repository";

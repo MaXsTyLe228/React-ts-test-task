@@ -29,3 +29,12 @@
     flex-direction: column;
   }
 }
+
+.UserSearch {
+  display: flex;
+  justify-content: space-evenly;
+
+  & > button {
+
+  }
+}

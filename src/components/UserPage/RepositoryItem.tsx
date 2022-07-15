@@ -9,13 +9,15 @@ interface RepositoryProps {
 
 const RepositoryItem = (props: RepositoryProps) => {
     return (
-        <a className="repositoryItem" target = "_blank" href={props.url}>
+        <a className="repositoryItem" target="_blank" href={props.url}>
             <div className="name">
                 {props.name}
             </div>
             <div className="forks_stars">
-                forks: {props.forks}
-                stars: {props.stars}
+                <div>
+                    forks: {props.forks}</div>
+                <div>
+                    stars: {props.stars}</div>
             </div>
         </a>
     );

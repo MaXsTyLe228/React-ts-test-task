@@ -12,7 +12,7 @@ const UserSearch = () => {
     }
 
     return (
-        <div>
+        <div className="UserSearch">
             <input ref={inputRef}/>
             <button onClick={SearchUser}>Search User</button>
         </div>
