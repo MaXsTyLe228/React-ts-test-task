@@ -1,0 +1,31 @@
+.UserItem {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  cursor: pointer;
+
+  & > .avatar {
+    height: 70px;
+    border-radius: 50%;
+  }
+}
+
+.UserInfo {
+  display: flex;
+  justify-content: space-evenly;
+
+  & > .avatar {
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  & > .information {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+  }
+}
